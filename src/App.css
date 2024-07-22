@@ -38,15 +38,55 @@
 }
 
 
-.calculator-wrapper {
-  width: 30rem;
+.wrapper {
+  width: 20rem;
+  background-color: #282c34;
+  color: whitesmoke;
   margin: 0 auto;
 }
 
-.btn.number {
-  background-color: #61dafb;
+.operations {
+  background-color: #1b795e;
+  color: whitesmoke;
+  padding: 10px ;
+}
+.wrapper .preOperate {
+  text-align: right;
+  font-size: smaller;
+  
+}
+.wrapper .currentOperate {
+  text-align: right;
+  font-size: x-large;
+
 }
 
-div.result {
-  width: 50%;
+.wrapper div.body .btn {
+  color: whitesmoke;
+  width: 4.8rem;
+  margin: 1px;
 }
+
+.wrapper div.body .btn.AC {
+  width: 9.8rem;
+}
+
+.wrapper div.body .btn.oper {
+  background-color: #313234;
+}
+.wrapper div.body .btn.oper:hover {
+  background-color: #6e6f70 ;
+}
+
+
+.wrapper div.body .btn.digit {
+  background-color: #2722246b;
+}
+.wrapper div.body .btn.digit:hover {
+  background-color: #6e6f70;
+} 
+
+
+
+
+

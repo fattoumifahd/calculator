@@ -1,51 +1,59 @@
-import './App.css';
 
-function App() {
-  const numbers = [ 7, 8 ,9 , 4 , 5 , 6, 1 , 2 , 3 , 0 ]
-  
-  return (
-    <div className='calculator-wrapper'>
-      <div className='result'>
-        <input type="text" name="input" className='form-control' id="" />
-      </div>
-      <div className='calculator'>
-        <div className='calculator-numbers'>
-          <div className='row'>
-            <div className="">
-              <button className='btn  number'>7</button>
-              <button className='btn  number'>8</button>
-              <button className='btn  number'>9</button>
-              </div>
-          </div>
-          <div className='row'>
-            <div className="col">
-              <button className='btn  number'>4</button>
-              <button className='btn  number'>5</button>
-              <button className='btn  number'>6</button>
-              </div>
-          </div>
-          <div className='row'>
-            <div className="col">
-              <button className='btn  number'>1</button>
-              <button className='btn  number'>2</button>
-              <button className='btn  number'>3</button>
-              </div>
-          </div>
-          <div className="row">
-            <div><button className='btn number'>0</button></div>
-          </div>
-        </div>
-        <div className='calculator-keys'>
-          <button className='operator'>X</button>
-          <button className='operator'>%</button>
-          <button className='operator'>+</button>
-          <button className='operator'>-</button>
-          <button className='operator'>=</button>
-          <button className='operator'>.</button>
-        </div>
-      </div>
-    </div>
-  );
+import React, { useReducer } from 'react'
+import "./App.css"
+const ACTIONS = {
+  ADD : 'add',
+  DEL : "delete",
+  MULTI : "multiplay", 
+  DIVIDE : "divide",
+  CLEAR : "clear",
+  CALC : 'calc'
 }
 
-export default App;
+// const reduce = (state , {type , payload}) => {
+//   switch (type) {
+//   case ACTIONS.CLEAR :
+//      return (state == null) ? state : {}
+//   case ACTIONS.ADD 
+//   }
+// }
+
+export default function App() {
+const [{curentOperate , prevOperate , operation}, dispatch ] = useReducer({})
+
+  return (
+    <div>
+      <div className="wrapper">
+        <div className="operations">
+        <div className='preOperate'>{prevOperate || ""}</div>
+        <div className='currentOperate'>{curentOperate || ""}</div>
+        </div>
+        <div className='body'>
+          <div className='btn AC oper'>AC</div>
+          <div className='btn oper'>DEL</div>
+          <div className='btn oper' >÷ </div>
+          <br />
+          <div className='btn digit'>7</div>
+          <div className='btn digit'>8</div>
+          <div className='btn digit'>9</div>
+
+          <div className='btn oper'>x</div>
+          <div className='btn digit'>4</div>
+          <div className='btn digit'>5</div>
+          <div className='btn digit'>6</div>
+          <div className='btn oper'>-</div>
+          <div className='btn digit'>1</div>
+          <div className='btn digit'>2</div>
+          <div className='btn digit'>3</div>
+          <div className='btn oper'>+</div>
+          <div className='btn oper'>.</div>
+          <div className='btn digit'>0</div>
+          <div className='btn oper'>%</div>
+          <div className='btn oper'>=</div>
+        </div>
+
+
+      </div>
+    </div>
+  )
+}

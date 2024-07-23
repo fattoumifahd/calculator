@@ -42,13 +42,14 @@
   width: 20rem;
   background-color: #282c34;
   color: whitesmoke;
-  margin: 0 auto;
+  margin: 5rem auto;
 }
 
 .operations {
   background-color: #1b795e;
   color: whitesmoke;
   padding: 10px ;
+  height: 4rem;
 }
 .wrapper .preOperate {
   text-align: right;
